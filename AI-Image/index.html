@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Image Generator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        #galeri .img-box.loading{
+          height: 300px;
+        }
+        #galeri .img-box.loading img{
+          width: 20% !important;
+          height: 20% !important;
+        }
+        #galeri .img-box .btn-download{
+          opacity: 0;
+        }
+        #galeri .img-box:not(.loading):hover .btn-download{
+          opacity: 1;
+          transition: .3s;
+        }
+
+        /* Responsive mobile */
+        @media screen and (max-width: 576px) {
+            #galeri{
+                margin-top: 30px !important;
+            }
+            #galeri .img-box{
+                width: 90% !important;
+            }
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid text-center" style="background: url(gambar/bg-ai.jpg) center/cover;">
+      <div class="row py-4 px-3">
+        <div class="col-lg-6 col-md-8 mx-auto">
+          <h1 class="mb-3 text-white">Text To Image With AI</h1>
+          <p class="fs-5 fw-medium text-white">
+            Mengubah Kata-kata yang anda tulis menjadi gambar menggunakan AI dan
+            Javascript
+          </p>
+          <form action="" class="border d-flex px-2 py-1 mx-auto mt-4 mb-3 rounded-pill bg-white" id="formAI">
+            <select
+              class="form-select border-0 shadow-none"
+              role="button"
+              style="width: 130px" 
+              aria-label="Default select example" id="jmlGbr"
+            >
+              <option value="4" selected>4 Gambar</option>
+              <option value="3">3 Gambar</option>
+              <option value="2">2 Gambar</option>
+              <option value="1">1 Gambar</option>
+            </select>
+            <input type="text" class="form-control flex-grow-1 ps-0 shadow-none border-0" placeholder="Uraikan yang anda cari" id="teksGbr">
+            <button type="submit" id="btnGenerate" class="btn btn-primary rounded-pill px-3">Generate</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex justify-content-center flex-wrap mt-5" id="galeri">
+        <div class="d-flex justify-content-center align-items-center position-relative mb-3 mx-2 img-box" style="width: 300px;">
+            <img src="gambar/gbr-1.png" alt="" class="w-100 h-100 rounded">
+        </div>
+        <div class="d-flex justify-content-center align-items-center position-relative mb-3 mx-2 img-box" style="width: 300px;">
+            <img src="gambar/gbr-2.png" alt="" class="w-100 h-100 rounded">
+        </div>
+        <div class="d-flex justify-content-center align-items-center position-relative mb-3 mx-2 img-box" style="width: 300px;">
+            <img src="gambar/gbr-3.png" alt="" class="w-100 h-100 rounded">
+        </div>
+        <div class="d-flex justify-content-center align-items-center position-relative mb-3 mx-2 img-box" style="width: 300px;">
+            <img src="gambar/gbr-4.png" alt="" class="w-100 h-100 rounded">
+        </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script>
+  </body>
+</html>
